@@ -1,0 +1,26 @@
+@baseUrl = http://localhost:5141
+
+### 1. Отримати всі повідомлення
+GET {{baseUrl}}/messages
+Accept: application/json
+
+### 2. Отримати одне повідомлення за ID
+GET {{baseUrl}}/messages/1
+Accept: application/json
+
+### 3. Отримати повідомлення від конкретного відправника
+GET {{baseUrl}}/messages/sender?email=misha@example.com
+Accept: application/json
+
+### 4. Додати нове повідомлення
+POST {{baseUrl}}/messages
+Content-Type: application/json
+
+{
+  "name": "Misha Koval",
+  "email": "misha@example.com",
+  "content": "some content"
+}
+
+### 5. Видалити повідомлення за ID
+DELETE {{baseUrl}}/messages/4
